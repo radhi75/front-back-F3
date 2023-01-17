@@ -7,12 +7,12 @@ import { useDispatch, useSelector } from "react-redux";
 import { logout } from "../redux/Action/authAction";
 const Navigation = () => {
   const dispatch = useDispatch();
-  const user = useSelector((state) => state.user);
+  const user = useSelector((state) => state.authReducer.user);
   const token = localStorage.getItem("token");
 
   return (
     <div>
-      {user && token !== null ? (
+      {user && token ? (
         <Navbar bg="warning" variant="light">
           <Container>
             <Navbar.Brand href="#home">Navbar</Navbar.Brand>
